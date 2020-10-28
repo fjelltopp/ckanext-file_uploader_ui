@@ -2,7 +2,7 @@
 {% block resource_item_explore_links %}
 <li>
   <a href="{{ url }}">
-    {% if res.has_views %}
+    {% if not is_activity_archive and res.has_views %}
       <i class="fa fa-bar-chart-o"></i>
       {{ _('Preview') }}
     {% else %}
