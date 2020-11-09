@@ -5,6 +5,6 @@
   {{ super() }}
   </div>
   {% if h.check_access('package_update', {'id':pkg.id }) %}
-    {% snippet 'ckanext-file_uploader_ui/upload.html' %}
+    {% snippet 'ckanext-file_uploader_ui/upload.html', pkg=pkg %}
   {% endif %}
 {% endblock %}
