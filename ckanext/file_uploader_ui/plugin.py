@@ -4,7 +4,6 @@ from ckanext.scheming.helpers import scheming_get_dataset_schema
 from ckan.lib.helpers import flash_success
 from ckan.common import _
 from flask import Blueprint, request, jsonify, redirect, send_file, make_response
-import urllib.parse
 from werkzeug.datastructures import FileStorage
 import os
 import uuid
@@ -12,7 +11,7 @@ import json
 import datetime
 import logging
 from ckan.lib.plugins import DefaultTranslation
-
+from six.moves.urllib.parse import quote
 log = logging.getLogger()
 
 try:
@@ -81,7 +80,7 @@ def file_uploader_download(package_id, file_id):
     response.headers["Content-Disposition"] = \
         "attachment;" \
         "filename*=UTF-8''{utf_filename}".format(
-            utf_filename=urllib.parse.quote(file_name.encode('utf-8'))
+            utf_filename=quote(file_name.encode('utf-8'))
         )
     return response
 
