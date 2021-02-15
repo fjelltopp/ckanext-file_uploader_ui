@@ -30,7 +30,7 @@ def file_uploader_ui():
     assert package
     files = request.files.values()
     assert len(files) == 1
-    file_storage = files[0] # type: FileStorage
+    file_storage = files[0]  # type: FileStorage
     file_uuid = str(uuid.uuid4())
     file_path = os.path.join(
         toolkit.config.get('ckan.storage_path'),
