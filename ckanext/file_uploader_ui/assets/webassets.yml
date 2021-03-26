@@ -1,0 +1,33 @@
+fileupload_scripts:
+  output: fileuploader_ui/%(version)s.js
+  contents:
+    - js/base.js
+    - js/jquery.ui.widget.js
+    - js/tmpl.js
+    - js/load-image.js
+    - js/load-image-scale.js
+    - js/load-image-meta.js
+    - js/load-image-fetch.js
+    - js/load-image-exif.js
+    - js/load-image-exif-map.js
+    - js/load-image-orientation.js
+    - js/canvas-to-blob.js
+    - js/jquery.blueimp-gallery.js
+    - js/jquery.iframe-transport.js
+    - js/jquery.fileupload.js
+    - js/jquery.fileupload-process.js
+    - js/jquery.fileupload-image.js
+    - js/jquery.fileupload-audio.js
+    - js/jquery.fileupload-video.js
+    - js/jquery.fileupload-validate.js
+    - js/jquery.fileupload-ui.js
+    - js/main.js
+  extra:
+    preload:
+      - base/main
+
+fileupload_styles:
+  output: fileuploader_ui/%(version)s.css
+  contents:
+    - css/jquery.fileupload.css
+    - css/jquery.fileupload-ui.css
