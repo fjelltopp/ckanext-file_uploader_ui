@@ -4,6 +4,7 @@ from ckanext.scheming.helpers import scheming_get_dataset_schema
 from ckan.lib.helpers import flash_success
 from ckan.common import _
 from flask import Blueprint, request, jsonify, redirect, send_file, make_response
+from urllib import quote
 from werkzeug.datastructures import FileStorage
 import os
 import uuid
@@ -11,7 +12,7 @@ import json
 import datetime
 import logging
 from ckan.lib.plugins import DefaultTranslation
-from six.moves.urllib.parse import quote
+
 log = logging.getLogger()
 
 try:
@@ -229,7 +230,7 @@ class File_Uploader_UiPlugin(plugins.SingletonPlugin, DefaultTranslation):
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
-        toolkit.add_resource('assets', 'file_uploader_ui')
+        toolkit.add_resource('fanstatic', 'file_uploader_ui')
 
     def i18n_domain(self):
         return 'ckanext-file_uploader_ui'

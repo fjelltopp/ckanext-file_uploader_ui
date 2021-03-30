@@ -34,10 +34,10 @@
         </button>
         <ul class="dropdown-menu">
             <li>
-                <a href="{{ h.url_for('datastore.dump', resource_id=res.id, format='csv', bom=True) }}" target="_blank" download="{{ res.name }}.csv"><span>CSV</span></a>
-                <a href="{{ h.url_for('datastore.dump', resource_id=res.id, format='tsv', bom=True) }}" target="_blank" download="{{ res.name }}.tsv"><span>TSV</span></a>
-                <a href="{{ h.url_for('datastore.dump', resource_id=res.id, format='json') }}" target="_blank" download="{{ res.name }}.json"><span>JSON</span></a>
-                <a href="{{ h.url_for('datastore.dump', resource_id=res.id, format='xml') }}" target="_blank" download="{{ res.name }}.xml"><span>XML</span></a>
+                <a href="{{ h.url_for(controller='ckanext.datastore.controller:DatastoreController', action='dump', resource_id=res.id, bom=True) }}" target="_blank" download><span>CSV</span></a>
+                <a href="{{ h.url_for(controller='ckanext.datastore.controller:DatastoreController', action='dump', resource_id=res.id, format='tsv', bom=True) }}" target="_blank" download><span>TSV</span></a>
+                <a href="{{ h.url_for(controller='ckanext.datastore.controller:DatastoreController', action='dump', resource_id=res.id, format='json') }}" target="_blank" download><span>JSON</span></a>
+                <a href="{{ h.url_for(controller='ckanext.datastore.controller:DatastoreController', action='dump', resource_id=res.id, format='xml') }}" target="_blank" download><span>XML</span></a>
             </li>
         </ul>
         {% endif %}
